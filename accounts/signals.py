@@ -4,7 +4,7 @@ from .models import User, UserProfile
 
 @receiver(post_save, sender=User)
 def post_save_create_profile_recevier(sender, instance, created, **kwargs):
-    print(created)
+    # print(created)
     if created:
         UserProfile.objects.create(user=instance)
         # print('User profile is created')
